@@ -1,0 +1,10 @@
+# Only the website and its repository documentation belong in this repository.
+/*
+!/.gitignore
+!/README.md
+!/dist/
+
+# Local editor and operating-system files.
+**/.DS_Store
+**/Thumbs.db
+**/*~
