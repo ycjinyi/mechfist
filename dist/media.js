@@ -3,7 +3,7 @@
 // An empty src shows a placeholder instead of a broken player.
 window.MECHFIST_MEDIA = {
   // Leave url empty to disable downloading; set the game release asset URL to enable it.
-  download: { url: '', filename: 'MECHFIST-Windows-Demo.zip', version: '0.2.0', size: '309 MB', memory: '8 GB RAM' },
+  download: { url: 'https://github.com/ycjinyi/mechfist/releases/latest/download/MECHFIST.zip', filename: 'MECHFIST.zip', version: '0.2.0', size: '309 MB', memory: '8 GB RAM' },
   images: [
     {
       src: 'assets/boxing.png',
