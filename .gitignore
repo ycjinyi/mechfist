@@ -4,6 +4,12 @@
 !/README.md
 !/dist/
 
+# Videos are uploaded as release assets and assembled during deployment.
+**/*.mp4
+**/*.webm
+# Game archives do not belong in the website source history.
+**/*.zip
+
 # Local editor and operating-system files.
 **/.DS_Store
 **/Thumbs.db

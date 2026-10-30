@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="MECHFIST by Mech Wrangler. A physics-driven robot boxing demo with AI battles and single-camera motion control.">
-  <title>MECHFIST — Mech Wrangler</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="MECHFIST by Mech Wrangler. A physics-driven robot boxing demo — watch AI battles or control a fighter with a single camera.">
+  <title>MECHFIST — Mech Wrangler · 1080p</title>
+  <link rel="stylesheet" href="styles.css?v=thanks-20261030-5">
   <script src="media.js" defer></script>
-  <script src="main.js" defer></script>
+  <script src="main.js?v=download-gate-20261030" defer></script>
   <script src="water.js" defer></script>
 </head>
 <body>
   <canvas class="ambient-water" id="ambient-water" aria-hidden="true"></canvas>
+  <div class="page-shell">
   <a class="skip" href="#main">Skip to content / 跳转到正文</a>
   <header class="site-header wrap">
     <a class="creator-name" href="#creator"><img src="assets/creator.jpg" alt="" width="40" height="40"><span>Mech Wrangler</span></a>
@@ -23,42 +24,45 @@
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="game-title">
-      <div class="eyebrow"><span class="yellow-line"></span><span data-en="PHYSICS-DRIVEN ROBOT BOXING" data-zh="物理驱动 · 机器人拳击">PHYSICS-DRIVEN ROBOT BOXING</span></div>
+      <div class="eyebrow"><span class="yellow-line" aria-hidden="true"></span><span data-en="PHYSICS-DRIVEN COMBAT" data-zh="物理驱动 · 拳拳到肉">PHYSICS-DRIVEN COMBAT</span><span class="yellow-line" aria-hidden="true"></span></div>
       <h1 id="game-title">MECHFIST<span class="title-square" aria-hidden="true"></span></h1>
       <div class="hero-copy">
-        <h2 data-en="Your moves, your robot" data-zh="你的动作，机器人的拳台">Your moves, your robot</h2>
-        <p data-en="Watch AI fighters face off, or step into the fight. A single camera turns your movements into control of a virtual robot." data-zh="观看 AI 自主交锋，或亲自加入战斗。通过单个摄像头，用身体动作操控游戏里的机器人。">Watch AI fighters face off, or step into the fight. A single camera turns your movements into control of a virtual robot.</p>
+        <h2 data-en="Your moves, its will" data-zh="你的动作，机器的意志">Your moves, its will</h2>
+        <p data-en="Watch AI fighters face off, or join in yourself — control a robot with your own body and bring the crowd to its feet." data-zh="观看 AI 对战，或用摄像头亲自下场，用你的精彩表现赢得全场欢呼。">Watch AI fighters face off, or join in yourself — control a robot with your own body and bring the crowd to its feet.</p>
       </div>
       <section class="gallery" id="gallery" aria-label="Game image gallery" aria-roledescription="carousel" data-en-aria="Game image gallery" data-zh-aria="游戏图片画廊">
         <figure class="hero-image">
-          <div class="gallery-stage"><img id="gallery-image" src="assets/boxing.png" width="3840" height="2160" alt="Two robots wearing red and blue boxing gloves face off in the arena."><div class="gallery-arrows"><button type="button" id="gallery-prev" aria-label="Previous image" data-en-aria="Previous image" data-zh-aria="上一张图片"><svg class="menu-chevron" viewBox="0 0 28 44" aria-hidden="true" focusable="false"><path d="M25 4 9 22 25 40 18 40 2 22 18 4Z"/></svg></button><button type="button" id="gallery-next" aria-label="Next image" data-en-aria="Next image" data-zh-aria="下一张图片"><svg class="menu-chevron" viewBox="0 0 28 44" aria-hidden="true" focusable="false"><path d="M3 4 19 22 3 40 10 40 26 22 10 4Z"/></svg></button></div></div>
-          <figcaption><span id="gallery-caption">MECHFIST · IN-ENGINE IMAGE</span><span id="gallery-counter" aria-live="polite" aria-atomic="true">01 / 02</span></figcaption>
+          <div class="gallery-stage"><img id="gallery-image" src="assets/boxing.png" width="3840" height="2160" alt="Two robots wearing red and blue boxing gloves face off in the arena."><div class="gallery-arrows"><button type="button" id="gallery-prev" aria-label="Previous image" data-en-aria="Previous image" data-zh-aria="上一张图片"><svg class="menu-chevron" viewBox="0 0 28 44" aria-hidden="true" focusable="false"><path d="M20 8 7 22 20 36"/></svg></button><button type="button" id="gallery-next" aria-label="Next image" data-en-aria="Next image" data-zh-aria="下一张图片"><svg class="menu-chevron" viewBox="0 0 28 44" aria-hidden="true" focusable="false"><path d="M8 8 21 22 8 36"/></svg></button></div></div>
         </figure>
         <div class="gallery-thumbnails" id="gallery-thumbnails" role="group" aria-label="Choose an image" data-en-aria="Choose an image" data-zh-aria="选择图片"></div>
+        <div class="gallery-dots" id="gallery-dots" role="group" aria-label="Gallery position" data-en-aria="Gallery position" data-zh-aria="画廊图片位置"></div>
       </section>
     </section>
     <section class="experience wrap" id="experience" aria-labelledby="experience-title">
-      <div class="section-intro"><h2 id="experience-title" data-en="Two ways into the ring" data-zh="两种方式，进入拳台">Two ways into the ring</h2></div>
-      <details class="mode" data-mode="spectate">
-        <summary class="mode-row"><span class="mode-label blue">AI × AI</span><span class="mode-copy"><span class="mode-heading" data-en="Watch the fight unfold" data-zh="观看 AI 自主交锋">Watch the fight unfold</span><span class="mode-description" data-en="Choose Spectate and watch AI-controlled robots box. Physical interactions shape the movements, impacts and balance changes in each exchange." data-zh="选择观战，观看 AI 控制的机器人拳击。物理交互让每次交锋呈现不同的动作、碰撞与平衡变化。">Choose Spectate and watch AI-controlled robots box. Physical interactions shape the movements, impacts and balance changes in each exchange.</span></span><span class="mode-control"><span class="expand-label"><span class="when-closed" data-en="Expand" data-zh="展开">Expand</span><span class="when-open" data-en="Collapse" data-zh="收起">Collapse</span><span class="expand-icon" aria-hidden="true">+</span></span></span></summary>
-        <div class="mode-media" data-video-slot="spectate"><div class="video-placeholder"><span class="video-kicker">AI × AI</span><p data-en="Gameplay video coming soon." data-zh="实机演示视频待补充。">Gameplay video coming soon.</p></div></div>
+      <div class="section-intro"><h2 id="experience-title" data-en="Two ways to play" data-zh="两种参与方式">Two ways to play</h2></div>
+      <details class="mode" data-mode="spectate" open>
+        <summary class="mode-row"><span class="mode-label blue"><span>AI</span> <span class="mode-versus">VS</span> <span>AI</span></span><span class="mode-copy"><span class="mode-heading" data-en="Every match keeps you guessing" data-zh="每场对决都充满悬念">Every match keeps you guessing</span><span class="mode-description" data-en="Choose a combat AI for each fighter. Real physics makes every punch, collision, and stumble count." data-zh="为双方选手挑选各自的格斗 AI；在真实的物理模拟下，每一拳、每一次碰撞、每一次重心变化都直接影响胜负。">Choose a combat AI for each fighter. Real physics makes every punch, collision, and stumble count.</span></span><span class="mode-control"><span class="expand-label"><span class="when-closed" data-en="Expand" data-zh="展开">Expand</span><span class="when-open" data-en="Collapse" data-zh="收起">Collapse</span><span class="expand-icon" aria-hidden="true">+</span></span></span></summary>
+        <div class="mode-media" data-video-slot="spectate"><video controls playsinline preload="metadata" src="assets/videos/AI-vs-AI.mp4" poster="assets/videos/AI-vs-AI-poster.png" aria-label="AI vs AI gameplay"><a href="assets/videos/AI-vs-AI.mp4">AI vs AI video</a></video></div>
       </details>
-      <details class="mode" data-mode="player">
-        <summary class="mode-row"><span class="mode-label red" data-en="YOU × AI" data-zh="玩家 × AI">YOU × AI</span><span class="mode-copy"><span class="mode-heading" data-en="Put your movements in the fight" data-zh="用你的动作加入战斗">Put your movements in the fight</span><span class="mode-description" data-en="Connect a camera and choose Join Fight. Body tracking turns your movements into robot control while you take on an AI opponent." data-zh="连接摄像头，选择加入战斗。通过身体动作操控机器人，与 AI 对手展开交锋。">Connect a camera and choose Join Fight. Body tracking turns your movements into robot control while you take on an AI opponent.</span></span><span class="mode-control"><span class="expand-label"><span class="when-closed" data-en="Expand" data-zh="展开">Expand</span><span class="when-open" data-en="Collapse" data-zh="收起">Collapse</span><span class="expand-icon" aria-hidden="true">+</span></span></span></summary>
-        <div class="mode-media" data-video-slot="player"><div class="video-placeholder"><span class="video-kicker" data-en="YOU × AI" data-zh="玩家 × AI">YOU × AI</span><p data-en="Gameplay video coming soon." data-zh="实机演示视频待补充。">Gameplay video coming soon.</p></div></div>
+      <details class="mode" data-mode="player" open>
+        <summary class="mode-row"><span class="mode-label red"><span class="mode-player" data-en="YOU" data-zh="你">YOU</span> <span class="mode-versus">VS</span> <span>AI</span></span><span class="mode-copy"><span class="mode-heading" data-en="Beat your opponent with your own moves" data-zh="用你的动作，击败对手">Beat your opponent with your own moves</span><span class="mode-description" data-en="Plug in a camera and control your robot with your own body. Face the AI head-on and feel the thrill of victory and the roar of the crowd." data-zh="连上摄像头，用身体动作操控你的机器人，亲自迎战 AI，体验胜利的喜悦与观众的呐喊。">Plug in a camera and control your robot with your own body. Face the AI head-on and feel the thrill of victory and the roar of the crowd.</span></span><span class="mode-control"><span class="expand-label"><span class="when-closed" data-en="Expand" data-zh="展开">Expand</span><span class="when-open" data-en="Collapse" data-zh="收起">Collapse</span><span class="expand-icon" aria-hidden="true">+</span></span></span></summary>
+        <div class="mode-media" data-video-slot="player"><video controls playsinline preload="metadata" src="assets/videos/YOU-vs-AI-promo.mp4?v=nose-guard-3" poster="assets/videos/YOU-vs-AI-poster.png?v=nose-guard-3" aria-label="YOU vs AI — from motion to the ring"><a href="assets/videos/YOU-vs-AI-promo.mp4?v=nose-guard-3">YOU vs AI video</a></video></div>
       </details>
     </section>
     <section class="demo-panel wrap" id="demo" aria-labelledby="demo-title">
       <div class="download-main">
-        <h2 id="demo-title" data-en="Download MECHFIST" data-zh="下载 MECHFIST">Download MECHFIST</h2>
-        <p data-en="Extract the complete archive and run MECHFIST.exe. Keep the accompanying files and folders together." data-zh="完整解压后运行 MECHFIST.exe，请保留配套文件与目录。">Extract the complete archive and run MECHFIST.exe. Keep the accompanying files and folders together.</p>
-        <a id="download-demo" class="button primary download-button" aria-disabled="true" tabindex="-1" aria-describedby="download-status"><svg class="windows-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 4.5 10.5 3.3v8H2zm10-1.4L22 1.7v9.6H12zM2 12.8h8.5v8L2 19.6zm10 0h10v9.5l-10-1.4z"/></svg><span data-en="Download Windows Demo" data-zh="下载 Windows Demo">Download Windows Demo</span><span aria-hidden="true">↓</span></a>
-        <p id="download-status" class="download-status" data-en="Download available soon" data-zh="下载即将开放">Download available soon</p>
+        <h2 id="demo-title"><span data-en="Download" data-zh="下载">Download</span> <span class="demo-title-brand">MECHFIST</span></h2>
+        <a id="download-demo" class="button primary download-button" role="link" aria-disabled="true" aria-label="Download MECHFIST for Windows" data-en-aria="Download MECHFIST for Windows" data-zh-aria="下载 Windows 版 MECHFIST"><svg class="windows-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M2 4.5 10.5 3.3v8H2zm10-1.4L22 1.7v9.6H12zM2 12.8h8.5v8L2 19.6zm10 0h10v9.5l-10-1.4z"/></svg><span id="download-label">Demo 0.2.0</span></a>
       </div>
-      <dl><div><dt data-en="Platform" data-zh="支持平台">Platform</dt><dd>Windows x86-64</dd></div><div><dt data-en="Modes" data-zh="游戏模式">Modes</dt><dd data-en="AI vs AI / Player vs AI" data-zh="AI 对 AI / 玩家对 AI">AI vs AI / Player vs AI</dd></div><div><dt data-en="Camera" data-zh="摄像头">Camera</dt><dd data-en="Required for Player vs AI" data-zh="玩家对 AI 模式需要">Required for Player vs AI</dd></div></dl>
+      <dl><div><dt data-en="Operating System" data-zh="操作系统">Operating System</dt><dd data-en="Windows (x64)" data-zh="Windows (x64)">Windows (x64)</dd></div><div><dt data-en="Recommended RAM" data-zh="推荐内存">Recommended RAM</dt><dd id="download-memory">8 GB RAM</dd></div><div><dt data-en="File Size" data-zh="文件大小">File Size</dt><dd id="download-size">309 MB</dd></div></dl>
     </section>
-    <section class="creator wrap" id="creator"><img src="assets/creator.jpg" loading="lazy" width="88" height="88" alt="Mech Wrangler avatar: a masked character wearing goggles with a small robot on their shoulder."><div><span class="section-number" data-en="CREATED BY" data-zh="制作者">CREATED BY</span><h2>Mech Wrangler</h2><p data-en="An independent developer exploring new game experiences through physics-based character animation." data-zh="致力于通过物理角色动画探索全新游戏体验的独立开发者。">An independent developer exploring new game experiences through physics-based character animation.</p></div><div class="creator-links"><a href="https://mech-wrangler.itch.io/">itch.io ↗</a><a href="https://github.com/ycjinyi">GitHub ↗</a></div></section>
+    <section class="creator wrap" id="creator"><img src="assets/creator.jpg" loading="lazy" width="88" height="88" alt="Mech Wrangler avatar: a masked character wearing goggles with a small robot on their shoulder."><div><span class="section-number" data-en="CREATED BY" data-zh="开发者">CREATED BY</span><h2>Mech Wrangler</h2><p data-en="A developer crafting new kinds of games through physics-based character animation." data-zh="致力于用物理角色动画，打造新颖的游戏体验。">A developer crafting new kinds of games through physics-based character animation.</p></div><div class="creator-links"><a href="https://mech-wrangler.itch.io/">itch.io</a><a href="https://github.com/ycjinyi">GitHub</a></div></section>
+    <section class="thanks wrap" aria-labelledby="thanks-title">
+      <h2 id="thanks-title" class="section-number" data-en="SPECIAL THANKS" data-zh="致谢">SPECIAL THANKS</h2>
+      <p><span data-en="Special thanks to" data-zh="感谢">Special thanks to</span> <a href="https://github.com/zhongmaomao">zhongmaomao</a> <span data-en="for providing access to development tools." data-zh="为本项目提供的开发工具支持。">for providing access to development tools.</span></p>
+    </section>
   </main>
-  <footer class="wrap"><span>MECHFIST / Mech Wrangler</span><span data-en="Physics. Movement. Play." data-zh="物理 · 动作 · 交互">Physics. Movement. Play.</span></footer>
+  <footer class="wrap"><span>© 2026 Mech Wrangler</span></footer>
+  </div>
 </body>
 </html>

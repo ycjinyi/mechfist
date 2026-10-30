@@ -4,7 +4,10 @@
   const context = canvas?.getContext('2d', { alpha: true });
   if (!context) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const tones = [0, 12, 26, 46, 74, 112, 166, 235];
+  const foamSteps = 8;
+  const maxFoamOpacity = 0.331765;
+  // Equal grayscale increments from transparent black background to the brightest foam.
+  const tones = Array.from({ length: foamSteps }, (_, level) => level / (foamSteps - 1) * maxFoamOpacity);
   // Different wavelengths, phases and headings share a prevailing upper-right direction.
   const waves = [
     [6.2, .23, -.57, .4], [4.1, .16, -.95, 1.9],
@@ -100,7 +103,7 @@
     [foam, nextFoam] = [nextFoam, foam];
     context.clearRect(0, 0, width, height);
     for (let level = 1; level < tones.length; level++) {
-      context.fillStyle = `rgba(245,245,245,${tones[level] * .36 / 255})`;
+      context.fillStyle = `rgba(255,255,255,${tones[level]})`;
       context.beginPath();
       for (const index of buckets[level]) {
         context.rect((index % columns) * cell, Math.floor(index / columns) * cell, dot, dot);
