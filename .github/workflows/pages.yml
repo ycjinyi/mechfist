@@ -1,0 +1,66 @@
+name: Deploy MECHFIST website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/**'
+      - '.github/workflows/pages.yml'
+      - '.github/website-videos.sha256'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  MEDIA_RELEASE_TAG: website-media-v1
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out website files
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Download reviewed 1080p videos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          is_draft="$(gh release view "$MEDIA_RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" --json isDraft --jq '.isDraft')"
+          if [ "$is_draft" != "false" ]; then
+            echo "::error::Publish the website media release before deploying. Pre-releases are supported; drafts are not."
+            exit 1
+          fi
+          gh release download "$MEDIA_RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern 'AI-vs-AI.mp4' \
+            --pattern 'YOU-vs-AI-promo.mp4' \
+            --dir dist/assets/videos
+          sha256sum --check .github/website-videos.sha256
+
+      - name: Upload complete website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
