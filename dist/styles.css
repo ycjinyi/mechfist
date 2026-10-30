@@ -112,3 +112,5 @@ footer{font-size:13px;font-family:"Oxanium","Smiley Sans Oblique",sans-serif}
 .thanks a:hover{color:var(--yellow);text-decoration-color:currentColor}
 @media(max-width:800px){.thanks{padding-left:0;padding-bottom:28px}.thanks p{line-height:1.8}}
 
+
+.creator-email{display:inline-block;margin-top:10px;color:var(--yellow);font-family:"Oxanium",Arial,sans-serif;font-size:15px;overflow-wrap:anywhere}
